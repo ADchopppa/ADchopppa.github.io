@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Lilya ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ff4d6d;
+            --secondary-color: #ff8fa3;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative; /* Nécessaire pour les stickers */
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NOUVEAU : Styles pour les GIFs de fond --- */
+        .bg-sticker {
+            position: absolute;
+            width: 150px; /* Taille des gifs */
+            z-index: 0; /* Derrière la carte */
+            opacity: 0.8;
+            pointer-events: none; /* Important : permet de cliquer à travers */
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .sticker-1 { top: 5%; left: 5%; transform: rotate(-15deg); animation: floatSticker 6s ease-in-out infinite; }
+        .sticker-2 { top: 10%; right: 5%; transform: rotate(15deg); animation: floatSticker 5s ease-in-out infinite reverse; }
+        .sticker-3 { bottom: 5%; left: 8%; transform: rotate(10deg); width: 120px; animation: floatSticker 7s ease-in-out infinite; }
+        .sticker-4 { bottom: 10%; right: 5%; transform: rotate(-10deg); width: 130px; animation: floatSticker 6s ease-in-out infinite reverse; }
+
+        @keyframes floatSticker {
+            0%, 100% { transform: translateY(0) rotate(var(--r)); }
+            50% { transform: translateY(-15px) rotate(var(--r)); }
+        }
+
+        /* Sur mobile, on cache les stickers pour garder la lisibilité */
+        @media (max-width: 768px) {
+            .bg-sticker { display: none; }
+        }
+
+        /* --- Fin styles fond --- */
+
+        .container {
+            position: relative;
+            background: var(--glass-bg);
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10; /* Au-dessus des stickers */
+        }
+
+        .gif-container {
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: end;
+        }
+        
+        .valentine-img {
+            max-height: 100%;
+            max-width: 100%;
+            filter: drop-shadow(0 5px 15px rgba(255, 77, 109, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .valentine-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin: 0;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            position: static;
+            z-index: 5;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            outline: none;
+        }
+
+        #btn-oui {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+            animation: pulse 2s infinite;
+            z-index: 10;
+        }
+
+        #btn-oui:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        #btn-non {
+            background-color: white;
+            color: #888;
+            border: 2px solid #e0e0e0;
+            transition: top 0.3s ease, left 0.3s ease;
+            z-index: 5;
+        }
+
+        .heart {
+            position: absolute;
+            top: -10vh;
+            color: #fff;
+            opacity: 0.8;
+            z-index: 1;
+            animation: fall linear forwards;
+            font-size: 1.5rem;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://media1.tenor.com/m/7eunWOzt9DYAAAAC/mucha-ropa-quitarse-la-ropa.gif" class="bg-sticker sticker-1" alt="Cat Love">
+    <img src="https://media1.tenor.com/m/WgvfGvz013EAAAAC/anime.gif" class="bg-sticker sticker-2" alt="Bear Heart">
+    <img src="https://media1.tenor.com/m/0sjTf8-VA4sAAAAd/usher-slide.gif" class="bg-sticker sticker-3" alt="Bear Kiss">
+    <img src="https://media1.tenor.com/m/aajoDl2trNIAAAAC/girl.gif" class="bg-sticker sticker-4" alt="Love Letter">
+
+    <div class="container" id="card-container">
+        
+        <div class="gif-container">
+            <img id="main-image" src="https://media.tenor.com/gRMzyvQqK8cAAAAi/sorry-love-you.gif" alt="mucha ropa" class="valentine-img">
+        </div>
+
+        <h1 id="main-title">Veux-tu être ma Valentine ?</h1>
+        <p id="sub-text">Lilya Bouhaddioui, stp admv... ❤️</p>
+        
+        <div class="buttons" id="btn-group">
+            <button id="btn-oui" onclick="celebrate()">OUI !</button>
+            <button id="btn-non">NON</button>
+        </div>
+    </div>
+
+    <script>
+        const btnNon = document.getElementById('btn-non');
+        const container = document.getElementById('card-container');
+        const mainImage = document.getElementById('main-image');
+        const mainTitle = document.getElementById('main-title');
+        const subText = document.getElementById('sub-text');
+        const btnGroup = document.getElementById('btn-group');
+        // On sélectionne tous les stickers de fond
+        const bgStickers = document.querySelectorAll('.bg-sticker');
+
+        // --- Logique du bouton NON ---
+        const moveButton = () => {
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const btnWidth = btnNon.offsetWidth;
+            const btnHeight = btnNon.offsetHeight;
+
+            const minY = 200; 
+            
+            const maxLeft = containerWidth - btnWidth - 20;
+            const maxTop = containerHeight - btnHeight - 20;
+
+            const randomLeft = Math.max(20, Math.random() * maxLeft);
+            const randomTop = Math.max(minY, Math.random() * maxTop);
+
+            btnNon.style.position = 'absolute';
+            btnNon.style.left = randomLeft + 'px';
+            btnNon.style.top = randomTop + 'px';
+        };
+
+        btnNon.addEventListener('mouseenter', moveButton);
+        btnNon.addEventListener('touchstart', (e) => { e.preventDefault(); moveButton(); });
+        btnNon.addEventListener('click', (e) => { e.preventDefault(); moveButton(); });
+
+
+        // --- Logique de célébration (OUI) ---
+        function celebrate() {
+            // 1. Changer l'image pour un couple heureux
+            mainImage.src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
+            
+            // 2. Changer le texte
+            mainTitle.innerHTML = "LETS GOOOO ❤️";
+            subText.innerHTML = "Je t'aime ADMV ! 😍";
+            subText.style.color = "#ff4d6d";
+            subText.style.fontSize = "1.5rem";
+
+            // 3. Cacher les boutons
+            btnGroup.style.display = 'none';
+
+            // 4. (Optionnel) Cacher les stickers de fond pour focus sur le message, 
+            // ou les laisser. Ici je choisis de les cacher pour épurer.
+            bgStickers.forEach(sticker => sticker.style.display = 'none');
+
+            // 5. Lancer les coeurs
+            setInterval(createHeart, 100);
+        }
+
+        // --- Pluie de coeurs ---
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = Math.random() > 0.5 ? '❤️' : '💖';
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        // --- Fond d'ambiance ---
+        setInterval(() => {
+            const bgHeart = document.createElement('div');
+            bgHeart.classList.add('heart');
+            bgHeart.innerHTML = '🤍';
+            bgHeart.style.left = Math.random() * 100 + "vw";
+            bgHeart.style.animationDuration = Math.random() * 5 + 5 + "s";
+            bgHeart.style.opacity = "0.3";
+            document.body.appendChild(bgHeart);
+            setTimeout(() => bgHeart.remove(), 10000);
+        }, 800);
+
+    </script>
+</body>
+</html>
